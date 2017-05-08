@@ -12,7 +12,7 @@ flag = 1
 class Spider:
     def __init__(self, name, tag, **kwargs):
         self.name = name
-        self.workbook = xlsxwriter.Workbook(r'C:\Users\happytreefriend\Desktop\working\excel\SHU'+name+'.xlsx')
+        self.workbook = xlsxwriter.Workbook(r'C:\Users\happytreefriend\Desktop\working\excel\DHU'+name+'.xlsx')
         self.worksheet = self.workbook.add_worksheet(name)
         self.worksheet.set_column('B:B', 40)
         self.worksheet.set_column('D:D', 30)
@@ -68,7 +68,7 @@ class Spider:
             print('get no email! the url is:',url)
             return
         # ------------------------------------------------------------------------------------
-        self.info.append("上海大学")
+        self.info.append("东华大学")
         self.info.append(self.name)
         self.info.append("上海")
         # -----------------------------YEAR-------------------------------------------------------
@@ -146,31 +146,30 @@ class Spider:
     @staticmethod
     def main():
         datas = []
-        # urls = [
-        #     'http://pe.dhu.edu.cn/3370/list1.htm',
-        #     'http://pe.dhu.edu.cn/3370/list2.htm','http://pe.dhu.edu.cn/3370/list3.htm']
+        urls = [
+            'http://pe.dhu.edu.cn/3370/list1.htm',
+            'http://pe.dhu.edu.cn/3370/list2.htm','http://pe.dhu.edu.cn/3370/list3.htm']
         # url = 'http://ices.shufe.edu.cn/Detail.aspx?ID=1364&TypeID=101&WebID=17'
         # for i in range(4,9):
         #     url = 'http://cise.ecust.edu.cn/2011/0615/c7766a5514%s/page.htm' %i
-        url = 'http://www.scicol.shu.edu.cn/Default.aspx?tabid=34851'
-        # for url in urls:
-        req = urllib.request.Request(url)
-        req.add_header('User-Agent',
-                       'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0')
-        texts = urllib.request.urlopen(req,timeout=8).read()
-        soup = BeautifulSoup(texts, "html.parser")
-        texts = soup.select("a[href]")
-        for text in texts:
-            url0 = text['href']
-            name = text.get_text(strip=True)
-            # name = [''.join(i) for i in name if not i]
-            name = name.replace('\xa0', '')
-            if name.split():
-                if name:
-                    if '&SkinSrc=' in url0:
-                        temp = urljoin(url, url0.strip()) + "|" + name
-                        datas.append(temp)
-                        print(temp.split("|"))
+        # url = 'http://web.dhu.edu.cn/cist/2969/list.htm'
+        for url in urls:
+            req = urllib.request.Request(url)
+            req.add_header('User-Agent',
+                           'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0')
+            texts = urllib.request.urlopen(req,timeout=8).read()
+            soup = BeautifulSoup(texts, "html.parser")
+            texts = soup.select("a[href]")
+            for text in texts:
+                url0 = text['href']
+                name = text.get_text()
+                name = name.strip()
+                if name.split():
+                    if name:
+                        if 'page.htm' in url0:
+                            temp = urljoin(url, url0) + "|" + name
+                            datas.append(temp)
+                            print(temp.split("|"))
         # datas = list(set(datas))   # 过滤重复
         # datas.sort()
         for data in datas:
@@ -237,7 +236,7 @@ class Spider:
             self.info = []
 
 if __name__ == "__main__":
-    spider = Spider("理学院", 'div', id="HRCMS_ctr12751_ModuleContent")
+    spider = Spider("体育部11", 'div', id="container_content")
     spider.main()
     spider.end()
 
