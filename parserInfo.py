@@ -3,7 +3,7 @@ import re
 
 class Parser:
     def __init__(self):
-        self.pattern = '的研究(工作)?|研究方向|[1１234\(\)（）\[\]\-、.：:;；,，。长期主要从事【】]'
+        self.pattern = '的研究(工作)?|研究方向|从事|[\(\)（）\[\]\-、.：:;；,，。长期主要【】]'
 
     def parser_dir(self, l):
         # if re.findall("研究方向|研究领域|主要从事", re_infos):  # *****现在页面中找关键字   判断下一个是否*****    研究方向|研究领域|主要从事|研究兴趣
@@ -37,21 +37,19 @@ class Parser:
         try:
             temp = ','.join(list_info[n + count].split())
             print(list_info[n + count])
-
-            while len(list_info[n + count]) < 1 or not re.search(r'[\u4e00-\u9fa5]+',list_info[n + count]):
+            while len(list_info[n + count]) < 6 or not re.search(r'[\u4e00-\u9fa5]+',list_info[n + count]):
                 print('在2进行第%s次循环' % count)
                 list_info[n + count + 1] = re.sub(self.pattern, ' ', list_info[n + count + 1]).strip()
                 temp = list_info[n + count + 1]
                 count += 1
                 print(temp)
-
             if re.search('研究方向|主要研究', list_info[n + count]) and len(temp) > 40:
                 return Parser.method1(self, list_info[n + count])
             if len(re.split('[,、，]',list_info[n + count])) > 1:
                 if len(re.split('[,、，]',list_info[n + count])[0]) < 3:
-                    return re.split('[,、，]',list_info[n + count])[1]
+                    return re.split(' ', re.sub(self.pattern, ' ', list_info[n + count]).strip())[1]
                 else:
-                    return re.split('[,、，]', list_info[n + count])[0]
+                    return re.split(' ', re.sub(self.pattern, ' ', list_info[n + count]).strip())[0]
             return re.sub(self.pattern, '', temp)
         except Exception as e:
             print("研究方向方法二失败", e)
