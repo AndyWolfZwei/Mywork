@@ -15,8 +15,7 @@ class GetChineseInfo:
         req0.add_header('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0')
         req = urllib.request.urlopen(req0, timeout=8)
         char = chardet.detect(urllib.request.urlopen(req0).read())    # 自动识别编码
-        print(char)
-        soup = BeautifulSoup(req, "html.parser", from_encoding='gbk')
+        soup = BeautifulSoup(req, "html.parser", from_encoding=char['encoding'])
         [script.extract() for script in soup.findAll('script')]
         [style.extract() for style in soup.findAll('style')]
         self.soup = soup
@@ -30,7 +29,7 @@ class GetChineseInfo:
             content = reg1.sub('', soups.prettify())     # 如果获取页面所有中文 用soup.prettify   若获取body   用soups.p...
             return '~'.join(content.split())
         except Exception as e:
-            print(e,url2)
+            print(e, url2)
             return None
 
     def get_c_info2(self):
@@ -39,9 +38,9 @@ class GetChineseInfo:
 if __name__ == "__main__":
     info = []
     url0 = 'http://cceb.dhu.edu.cn/article.do?method=showmax&id=60&pid=30&start=32&tx=0.8361615977042185'
-    url = 'http://env.dhu.edu.cn/f9/77/c8125a129399/page.htm'
+    url = 'http://www.qwc.shu.edu.cn/Default.aspx?tabid=31537&ctl=Detail&mid=60165&Id=195583'
     temp = GetChineseInfo()
-    re_infos = temp.get_crit_info(url,'div', id="infocontent")
+    re_infos = temp.get_crit_info(url, 'div', id="dnn_ContentPane")
     l = re_infos.split('~')  # 分割
     # print(re_infos)re_infos
     te = temp.p.parser_dir(l)
