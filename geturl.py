@@ -5,14 +5,14 @@ import xlsxwriter
 import functions
 import parserInfo
 from urllib.parse import urljoin
-import time, threading
+
 flag = 1
 
 
 class Spider:
     def __init__(self, name, tag, **kwargs):
         self.name = name
-        self.workbook = xlsxwriter.Workbook(r'C:\Users\happytreefriend\Desktop\working\excel\SHU'+name+'.xlsx')
+        self.workbook = xlsxwriter.Workbook(r'C:\Users\happytreefriend\Desktop\working\excel\DHU'+name+'.xlsx')
         self.worksheet = self.workbook.add_worksheet(name)
         self.worksheet.set_column('B:B', 40)
         self.worksheet.set_column('D:D', 30)
@@ -48,6 +48,7 @@ class Spider:
         global flag
         try:
             re_info = self.f.get_crit_info(urls,self.tag,**self.kwargs)
+
             spider._settle(names, urls, re_info, flag)
         except Exception as e:
             print("_get_info  error!", e, 'The url is:', urls)
@@ -67,7 +68,7 @@ class Spider:
             print('get no email! the url is:',url)
             return
         # ------------------------------------------------------------------------------------
-        self.info.append("上海大学")
+        self.info.append("东华大学")
         self.info.append(self.name)
         self.info.append("上海")
         # -----------------------------YEAR-------------------------------------------------------
@@ -139,47 +140,43 @@ class Spider:
         self.worksheet.write(self.i, 16, self.info[16])
         self.i += 1
 
-
     def end(self):
         self.workbook.close()
 
     @staticmethod
     def main():
         datas = []
-        # urls = [
-        #     'http://pe.dhu.edu.cn/3370/list1.htm',
-        #     'http://pe.dhu.edu.cn/3370/list2.htm','http://pe.dhu.edu.cn/3370/list3.htm']
+        urls = [
+            'http://pe.dhu.edu.cn/3370/list1.htm',
+            'http://pe.dhu.edu.cn/3370/list2.htm','http://pe.dhu.edu.cn/3370/list3.htm']
         # url = 'http://ices.shufe.edu.cn/Detail.aspx?ID=1364&TypeID=101&WebID=17'
         # for i in range(4,9):
         #     url = 'http://cise.ecust.edu.cn/2011/0615/c7766a5514%s/page.htm' %i
-        url = 'http://scie.shu.edu.cn/Default.aspx?tabid=10196'
-        # for url in urls:
-        req = urllib.request.Request(url)
-        req.add_header('User-Agent',
-                       'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0')
-        try:
+        # url = 'http://web.dhu.edu.cn/cist/2969/list.htm'
+        for url in urls:
+            req = urllib.request.Request(url)
+            req.add_header('User-Agent',
+                           'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0')
             texts = urllib.request.urlopen(req,timeout=8).read()
-        except:
-            texts = urllib.request.urlopen(req, timeout=8).read()
-        soup = BeautifulSoup(texts, "html.parser")
-        texts = soup.select("a[href]")
-        for text in texts:
-            url0 = text['href']
-            name = text.get_text(strip=True)
-            name = name.replace('\xa0', '')
-            if name.split():
-                if name:
-                    if 'http://scie.shu.edu.cn/Portals/' in url0:
-                        temp = urljoin(url, url0.strip()) + "|" + name
-                        datas.append(temp)
-                        print(temp.split("|"))
+            soup = BeautifulSoup(texts, "html.parser")
+            texts = soup.select("a[href]")
+            for text in texts:
+                url0 = text['href']
+                name = text.get_text()
+                name = name.strip()
+                if name.split():
+                    if name:
+                        if 'page.htm' in url0:
+                            temp = urljoin(url, url0) + "|" + name
+                            datas.append(temp)
+                            print(temp.split("|"))
         # datas = list(set(datas))   # 过滤重复
         # datas.sort()
         for data in datas:
-            start = time.clock()
-            spider._get_info(data)
-            end = time.clock()
-            print('用时：%s' % (end - start))
+            if data:
+                spider._get_info(data)
+            else:
+                return
 
     def main2(self):    # ****************************信息在一个url情况   此时改if_name__ 中的main函数
         urls = ['http://cise.ecust.edu.cn/2011/0615/c7766a55144/page.htm',
@@ -239,10 +236,7 @@ class Spider:
             self.info = []
 
 if __name__ == "__main__":
-    spider = Spider("通讯与信息工程学院", 'div', align="center")
-    t = threading.Thread(spider.main())
-    t.start()
-    t.join()
-    print('thread %s ended.' % threading.current_thread().name)
+    spider = Spider("体育部11", 'div', id="container_content")
+    spider.main()
     spider.end()
 
