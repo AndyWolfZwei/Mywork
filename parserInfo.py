@@ -68,7 +68,7 @@ class Parser:
             if re.findall("研究方向|研究领域|研究兴趣|研究专长|专业方向", words):  # *****在list中再找关键字 ******   (match search findall)
                 print('找到研究方向')
                 words = re.sub('[主要的]', '', words)
-                if len(words) > 9 and '及课题' not in words:  # 如果研究方向所在长度小于6   执行在这句话里面找研究方向
+                if len(words) > 9 and not re.search('研究专长|及课题|从事专业',words):  # 如果研究方向所在长度小于6   执行在这句话里面找研究方向
                     return Parser.method1(self, words)
                 else:               # 否则 在下一句找研究方向
                     return Parser.method2(self, list_info, n)

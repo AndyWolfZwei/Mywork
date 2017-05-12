@@ -19,7 +19,7 @@ class Spider:
     def __setstate__(self, state):
         self.__dict__.update(state)
 
-    def __init__(self, name, tag, **kwargs):
+    def __init__(self, name, id0,tag, **kwargs):
         self.name = name
         self.info = []
         self.f = functions.GetChineseInfo()
@@ -28,14 +28,16 @@ class Spider:
         self.kwargs = kwargs
         self.pool = multiprocessing.Pool(8)
         self.i = 1
+        self.id = id0
 
-    def get_info(self, strs, l):
+    def get_info(self, strs, l_in):
         names = strs.split("|")[1]
         urls = strs.split("|")[0]
-        ll = l
+        ll = l_in
+        # print(names,urls)
         global flag
         try:
-            re_info = self.f.get_crit_info(urls, self.tag, **self.kwargs)
+            re_info = self.f.get_crit_info(urls, self.id, self.tag, **self.kwargs)
             Spider._settle(self, names, urls, re_info, flag, ll)
         except Exception as e:
             print("_get_info  error!", e, 'The url is:', urls)
@@ -43,7 +45,7 @@ class Spider:
             return
 
     def _settle(self, name, url, re_infos, flag0, l_t):
-        l = re_infos.split('~')
+        l_split = re_infos.split('~')
         self.i += 1
         self.info.append(str(self.i))
         self.info.append(url)
@@ -56,7 +58,7 @@ class Spider:
             print('get no email! the url is:',url)
             return
         # ------------------------------------------------------------------------------------
-        self.info.append("上海大学")
+        self.info.append("上海师范大学")
         self.info.append(self.name)
         self.info.append("上海")
         # -----------------------------YEAR-------------------------------------------------------
@@ -77,7 +79,7 @@ class Spider:
         else:
             self.info.append('博士')
         # ----------------------------职称---------------------------------------------------
-        self.info.append(self.parser_info.parser_qual(re_infos, l))
+        self.info.append(self.parser_info.parser_qual(re_infos, l_split))
         # ----------------------------导师资格----------------------------------------------------
         if re.findall("博士生导师|博导", re_infos):  # 匹配导师资格
             self.info.append("博士生导师")
@@ -87,7 +89,10 @@ class Spider:
             self.info.append('')
         # -----------------------------研究方向----适用于找下一句话------------------------------------
         if flag0 == 1:
-            self.info.append(self.parser_info.parser_dir(l))
+            if re.search('1\d|\d1',self.parser_info.parser_dir(l_split)):
+                self.info.append(self.parser_info.parser_dir(l_split))
+            else:
+                self.info.append(re.sub('1','',self.parser_info.parser_dir(l_split)))
         if flag0 == 2:       #
             self.info.append(self.parser_info.parser_other_dir(self.f.soup))
         if flag0 == 3:       # 找模板
@@ -111,45 +116,43 @@ class Spider:
             self.info = []
 
     @staticmethod
-    def main():
+    def main(*urls):
         datas0 = []
-        # urls = [
-        #     'http://pe.dhu.edu.cn/3370/list1.htm',
-        #     'http://pe.dhu.edu.cn/3370/list2.htm','http://pe.dhu.edu.cn/3370/list3.htm']
-        # url = 'http://ices.shufe.edu.cn/Detail.aspx?ID=1364&TypeID=101&WebID=17'
-        # for i in range(4,9):
-        #     url = 'http://cise.ecust.edu.cn/2011/0615/c7766a5514%s/page.htm' %i
-        url = 'http://ece.shu.edu.cn/Default.aspx?tabid=35522'
-        # for url in urls:
-        req = urllib.request.Request(url)
-        req.add_header('User-Agent',
-                       'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0')
-        try:
-            texts = urllib.request.urlopen(req).read()
-        except TimeoutError:
-            print('try again')
-            texts = urllib.request.urlopen(req, timeout=8).read()
-        soup = BeautifulSoup(texts, "html.parser")
-        texts = soup.select("a[href]")
-        for text in texts:
-            url0 = text['href']
-            name = text.get_text(strip=True)
-            name = name.replace('\xa0', '')
-            if name.split():
-                if name:
-                    if '&SkinSrc=[L]Skins/' in url0:
-                        temp = urljoin(url, url0.strip()) + "|" + name
-                        datas0.append(temp)
-                        print(temp.split("|"))
+        print(urls)
+        for url in urls[0]:
+            print(url)
+            req = urllib.request.Request(url)
+            req.add_header('User-Agent',
+                           'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0')
+            try:
+                texts = urllib.request.urlopen(req).read()
+            except TimeoutError:
+                print('try again')
+                texts = urllib.request.urlopen(req, timeout=8).read()
+            soup = BeautifulSoup(texts, "html.parser")
+            texts = soup.select("a[href]")
+            for text in texts:
+                url0 = text['href']
+                name = text.get_text(strip=True)
+                name = name.replace('\xa0', '')
+                # print(url0,name)
+                if name.split():
+                    if name:
+                        if re.search('http://xxjd.shnu.edu.cn/Default.aspx?',url0):
+                            temp = urljoin(url, url0.strip()) + "|" + name
+                            datas0.append(temp)
+                            print(temp.split("|"))
         # datas = list(set(datas))   #  过滤重复
         # datas.sort()
-        # try:
+        results = []
         for data in datas0:
-            spider.pool.apply_async(spider.get_info, (data, l,))
-            # spider.get_info(data, l,)
+            results.append(spider.pool.apply_async(spider.get_info, (data, l,)))
+            # spider.get_info(data, l0,)
         spider.pool.close()
         spider.pool.join()
-
+        for i in range(0,len(results)):
+            if results[i].get() is not None:
+                print(results[i].get())
         # except Exception as e:
         #     print('@@@',e)
         # for res in result:
@@ -218,7 +221,7 @@ class Spider:
 
 class Write(object):
     def __init__(self, name,lis):
-        self.workbook = xlsxwriter.Workbook(r'C:\Users\happytreefriend\Desktop\working\excel\SHU'+name+'.xlsx')
+        self.workbook = xlsxwriter.Workbook(r'C:\Users\happytreefriend\Desktop\working\excel\SHNU'+name+'.xlsx')
         self.worksheet = self.workbook.add_worksheet(name)
         self.worksheet.set_column('B:B', 40)
         self.worksheet.set_column('D:D', 30)
@@ -254,11 +257,17 @@ class Write(object):
 
 if __name__ == "__main__":
     start = time.time()
-    root_name = "环境与化学工程学院"
-    spider = Spider(root_name, 'div', id='dnn_ContentPane')
+    r_urls = [
+        # 'http://jiangong.shnu.edu.cn/Default.aspx?tabid=931#top',
+        # 'http://xxjd.shnu.edu.cn/Default.aspx?tabid=13534',
+        # 'http://xxjd.shnu.edu.cn/Default.aspx?tabid=13535',
+        # 'http://shenghuan.shnu.edu.cn/Default.aspx?tabid=10619&language=zh-CN'
+    ]
+    root_name = "建筑工程学院"
+    spider = Spider(root_name, 0, 'div', class_="content")    # 0 获取部分内容 1 获取全部
     mgr = multiprocessing.Manager()
     l = mgr.list()
-    spider.main()
+    spider.main(r_urls)
     write = Write(root_name, str(l))
     write.writing()
     write.end()

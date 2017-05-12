@@ -13,7 +13,11 @@ class GetChineseInfo:
     def _get_soup(self, urll):  # 返回soup对象
         req0 = urllib.request.Request(urll)
         req0.add_header('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0')
-        req = urllib.request.urlopen(req0, timeout=8)
+        try:
+            req = urllib.request.urlopen(req0)
+        except Exception as e:
+            print(e)
+            req = urllib.request.urlopen(req0, timeout=10)
         char = chardet.detect(urllib.request.urlopen(req0).read())    # 自动识别编码
         if char['encoding'] == 'GB2312':
             char['encoding'] = 'gbk'
@@ -23,13 +27,17 @@ class GetChineseInfo:
         self.soup = soup
         return soup
 
-    def get_crit_info(self, url2, tag='div', **kwargs):    # 要改标签    最好是div标签
+    def get_crit_info(self, url2, num=0,tag='div', **kwargs):    # 要改标签    最好是div标签
         soup = GetChineseInfo._get_soup(self,url2)
         soups = soup.find(tag, **kwargs)   # *********************改这里*******************************
         reg1 = re.compile("<[^>]*>")
         try:
-            content = reg1.sub('', soups.prettify())     # 如果获取页面所有中文 用soup.prettify   若获取body   用soups.p...
-            return '~'.join(content.split())
+            if num == 0:
+                content0 = reg1.sub('', soups.prettify())     # 如果获取页面所有中文 用soup.prettify   若获取body   用soups.p...
+                return '~'.join(content0.split())
+            if num == 1:
+                content = reg1.sub('', soup.prettify())
+                return '~'.join(content.split())
         except Exception as e:
             print(e, url2)
             return None
@@ -40,12 +48,12 @@ class GetChineseInfo:
 if __name__ == "__main__":
     info = []
     url0 = 'http://cceb.dhu.edu.cn/article.do?method=showmax&id=60&pid=30&start=32&tx=0.8361615977042185'
-    url = 'http://ece.shu.edu.cn/Default.aspx?tabid=35649&ctl=Detail&mid=66131&Id=198437&SkinSrc=[L]Skins/huanhua_160608/huanhua2_160608'
+    url = 'http://clxy.usst.edu.cn/s/79/t/392/ce/ad/info52909.htm'
     temp = GetChineseInfo()
-    re_infos = temp.get_crit_info(url, 'div', id='dnn_ContentPane')
+    re_infos = temp.get_crit_info(url, 0,'td', class_='detail_Context')
     l = re_infos.split('~')  # 分割
     # print(re_infos)re_infos
-    te = temp.p.parser_dir(re_infos)
+    te = temp.p.parser_dir(l)
     print(re_infos)
 
     # if len(list_info[n + count]) > 40:
