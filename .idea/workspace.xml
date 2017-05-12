@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd945685-14a2-4cb2-ac56-d3909303e405" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/happytreefriend.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/happytreefriend.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions.py" afterPath="$PROJECT_DIR$/functions.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geturl.py" afterPath="$PROJECT_DIR$/geturl.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parserInfo.py" afterPath="$PROJECT_DIR$/parserInfo.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -713,7 +709,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494552425476</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="5.12更新">
+      <created>1494583470977</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1494583470977</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -726,7 +729,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21781115" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -812,7 +815,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="更新为4.0.0 &#10;增加多线程 以及数据之间共享&#10;将write excel移除parser 另外定义一个class&#10;累死QAQ" />
     <MESSAGE value="5.11更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="5.11更新" />
+    <MESSAGE value="5.12更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="5.12更新" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
