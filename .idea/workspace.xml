@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd945685-14a2-4cb2-ac56-d3909303e405" name="Default" comment="更新为4.0.0 &#10;增加多线程 以及数据之间共享&#10;将write excel移除parser 另外定义一个class&#10;累死QAQ">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/3.2.1.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+    <list default="true" id="bd945685-14a2-4cb2-ac56-d3909303e405" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions.py" afterPath="$PROJECT_DIR$/functions.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geturl.py" afterPath="$PROJECT_DIR$/geturl.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parserInfo.py" afterPath="$PROJECT_DIR$/parserInfo.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -322,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494319690093</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="5.11更新">
+      <created>1494552425476</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1494552425476</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
