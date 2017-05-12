@@ -48,9 +48,9 @@ class GetChineseInfo:
 if __name__ == "__main__":
     info = []
     url0 = 'http://cceb.dhu.edu.cn/article.do?method=showmax&id=60&pid=30&start=32&tx=0.8361615977042185'
-    url = 'http://clxy.usst.edu.cn/s/79/t/392/ce/ad/info52909.htm'
+    url = 'http://cfl.shmtu.edu.cn/teacher_show.aspx?id=276'
     temp = GetChineseInfo()
-    re_infos = temp.get_crit_info(url, 0,'td', class_='detail_Context')
+    re_infos = temp.get_crit_info(url, 0, 'div', class_="ny_right")
     l = re_infos.split('~')  # 分割
     # print(re_infos)re_infos
     te = temp.p.parser_dir(l)

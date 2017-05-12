@@ -3,7 +3,7 @@ import re
 
 class Parser:
     def __init__(self):
-        self.pattern = '的研究(工作)?|研究方向|从事|[\(\)（）\[\]\-、.：:;；,，。长期主要【】]'
+        self.pattern = '的(研究|教学)(工作)?|研究方向|从事|[\(\)（）\[\]\-、.：:;；,，。是为长期主要【】]'
 
     def parser_dir(self, l):
         # if re.findall("研究方向|研究领域|主要从事", re_infos):  # *****现在页面中找关键字   判断下一个是否*****    研究方向|研究领域|主要从事|研究兴趣
@@ -49,6 +49,7 @@ class Parser:
                 if len(re.split('[,、，]',list_info[n + count])[0]) < 3:
                     return re.split(' ', re.sub(self.pattern, ' ', list_info[n + count]).strip())[1]
                 else:
+                    print(re.split(' ', re.sub(self.pattern, ' ', list_info[n + count]).strip()))
                     return re.split(' ', re.sub(self.pattern, ' ', list_info[n + count]).strip())[0]
             return re.sub(self.pattern, '', temp)
         except Exception as e:
@@ -104,6 +105,10 @@ class Parser:
             return email[0]
         else:
             return None
+        # l = re_infos.split('~')
+        # for n, t in enumerate(l):  # 针对读出@为[at] 情况
+        #     if re.search("\[at\]", t):
+        #         return l[n - 1] + '@' + l[n + 1]
 
     @staticmethod
     def parser_year(re_infos):

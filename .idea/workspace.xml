@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd945685-14a2-4cb2-ac56-d3909303e405" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/happytreefriend.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/happytreefriend.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions.py" afterPath="$PROJECT_DIR$/functions.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geturl.py" afterPath="$PROJECT_DIR$/geturl.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parserInfo.py" afterPath="$PROJECT_DIR$/parserInfo.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,17 +18,31 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="geturl.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="geturl.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geturl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+            <state relative-caret-position="4008">
+              <caret line="226" column="19" lean-forward="false" selection-start-line="226" selection-start-column="19" selection-end-line="226" selection-end-column="19" />
               <folding>
-                <element signature="e#244#331#0" expanded="false" />
-                <element signature="e#376#403#0" expanded="false" />
-                <element signature="e#1271#4619#0" expanded="false" />
-                <element signature="e#4668#8777#0" expanded="false" />
-                <element signature="e#6205#6229#0" expanded="false" />
+                <element signature="e#0#29#0" expanded="true" />
+                <element signature="e#270#357#0" expanded="false" />
+                <element signature="e#402#429#0" expanded="false" />
+                <element signature="e#488#755#0" expanded="false" />
+                <element signature="e#801#1231#0" expanded="false" />
+                <element signature="e#6886#8252#0" expanded="false" />
+                <element signature="e#8044#8202#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="post.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/post.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="76" column="19" lean-forward="false" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -33,22 +51,21 @@
       <file leaf-file-name="parserInfo.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/parserInfo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1032">
-              <caret line="70" column="66" lean-forward="false" selection-start-line="70" selection-start-column="66" selection-end-line="70" selection-end-column="66" />
+            <state relative-caret-position="1944">
+              <caret line="104" column="27" lean-forward="false" selection-start-line="104" selection-start-column="27" selection-end-line="104" selection-end-column="27" />
               <folding>
-                <element signature="e#1271#2434#0" expanded="false" />
-                <element signature="e#2494#2655#0" expanded="false" />
-                <element signature="e#3313#4213#0" expanded="false" />
+                <element signature="e#2599#2760#0" expanded="false" />
+                <element signature="e#3418#4318#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="functions.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
-              <caret line="55" column="29" lean-forward="false" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
+            <state relative-caret-position="336">
+              <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -58,10 +75,18 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>i</find>
       <find>研究方向</find>
+      <find>http://www.flxy.ecupl.edu.cn/s/87/t/113/5d/6b/info23915.htm</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -80,10 +105,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/functions.py" />
-        <option value="$PROJECT_DIR$/parserInfo.py" />
         <option value="$PROJECT_DIR$/../working/杂/爬虫工作交接/数据清洗_Windows/pro.py" />
+        <option value="$PROJECT_DIR$/parserInfo.py" />
+        <option value="$PROJECT_DIR$/functions.py" />
         <option value="$PROJECT_DIR$/geturl.py" />
+        <option value="$PROJECT_DIR$/post.py" />
       </list>
     </option>
   </component>
@@ -109,10 +135,354 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4.1.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 3.6.1rc1 (C:\Users\happytreefriend\AppData\Local\Programs\Python\Python36\python.exe) &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4.1.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 3.6.1rc1 (C:\Users\happytreefriend\AppData\Local\Programs\Python\Python36\python.exe) &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site-packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4.1.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 3.6.1rc1 (C:\Users\happytreefriend\AppData\Local\Programs\Python\Python36\python.exe) &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site-packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twisted" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4.1.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 3.6.1rc1 (C:\Users\happytreefriend\AppData\Local\Programs\Python\Python36\python.exe) &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site-packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twisted" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="words" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4.1.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 3.6.1rc1 (C:\Users\happytreefriend\AppData\Local\Programs\Python\Python36\python.exe) &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site-packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twisted" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="words" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4.1.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 3.6.1rc1 (C:\Users\happytreefriend\AppData\Local\Programs\Python\Python36\python.exe) &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site-packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twisted" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="words" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test_ircsupport.py" />
+              <option name="myItemType" value="com.jetbrains.python.projectView.PyFileNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4.1.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 3.6.1rc1 (C:\Users\happytreefriend\AppData\Local\Programs\Python\Python36\python.exe) &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site-packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twisted" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="words" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test_ircsupport.py" />
+              <option name="myItemType" value="com.jetbrains.python.projectView.PyFileNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StubConversation" />
+              <option name="myItemType" value="com.jetbrains.python.projectView.PyElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4.1.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 3.6.1rc1 (C:\Users\happytreefriend\AppData\Local\Programs\Python\Python36\python.exe) &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4.1.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 3.6.1rc1 (C:\Users\happytreefriend\AppData\Local\Programs\Python\Python36\python.exe) &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="urllib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4.1.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 3.6.1rc1 (C:\Users\happytreefriend\AppData\Local\Programs\Python\Python36\python.exe) &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="urllib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="request.py" />
+              <option name="myItemType" value="com.jetbrains.python.projectView.PyFileNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4.1.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 3.6.1rc1 (C:\Users\happytreefriend\AppData\Local\Programs\Python\Python36\python.exe) &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="urllib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="request.py" />
+              <option name="myItemType" value="com.jetbrains.python.projectView.PyFileNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AbstractHTTPHandler" />
+              <option name="myItemType" value="com.jetbrains.python.projectView.PyElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4.1.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 3.6.1rc1 (C:\Users\happytreefriend\AppData\Local\Programs\Python\Python36\python.exe) &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="json" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4.1.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 3.6.1rc1 (C:\Users\happytreefriend\AppData\Local\Programs\Python\Python36\python.exe) &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="json" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="__init__.py" />
+              <option name="myItemType" value="com.jetbrains.python.projectView.PyFileNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4.1.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 3.6.1rc1 (C:\Users\happytreefriend\AppData\Local\Programs\Python\Python36\python.exe) &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Python36" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="4.1.0" />
@@ -143,7 +513,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.geturl">
+  <component name="RunManager" selected="Python.post">
     <configuration default="false" name="geturl" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -216,6 +586,24 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
+    <configuration default="false" name="post" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="crowpicking" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/post.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -280,18 +668,20 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.geturl" />
       <item index="1" class="java.lang.String" itemvalue="Python.functions" />
       <item index="2" class="java.lang.String" itemvalue="Python.pro" />
       <item index="3" class="java.lang.String" itemvalue="Python.parserInfo" />
+      <item index="4" class="java.lang.String" itemvalue="Python.post" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.geturl" />
-        <item index="1" class="java.lang.String" itemvalue="Python.pro" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.post" />
+        <item index="1" class="java.lang.String" itemvalue="Python.geturl" />
         <item index="2" class="java.lang.String" itemvalue="Python.functions" />
-        <item index="3" class="java.lang.String" itemvalue="Python.parserInfo" />
+        <item index="3" class="java.lang.String" itemvalue="Python.pro" />
+        <item index="4" class="java.lang.String" itemvalue="Python.parserInfo" />
       </list>
     </recent_temporary>
   </component>
@@ -338,11 +728,11 @@
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08798283" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21781115" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5064378" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49356222" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33069083" sideWeight="0.49356222" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -358,6 +748,27 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5064378" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295583" sideWeight="0.49356222" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08905579" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997735" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -410,16 +821,12 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/geturl.py">
+    <entry file="file://$PROJECT_DIR$/functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="288">
+          <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="46" />
           <folding>
-            <element signature="e#244#331#0" expanded="false" />
-            <element signature="e#376#403#0" expanded="false" />
-            <element signature="e#1271#4619#0" expanded="false" />
-            <element signature="e#4668#8777#0" expanded="false" />
-            <element signature="e#6205#6229#0" expanded="false" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -429,11 +836,66 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#244#331#0" expanded="false" />
-            <element signature="e#376#403#0" expanded="false" />
-            <element signature="e#1271#4619#0" expanded="false" />
-            <element signature="e#4668#8777#0" expanded="false" />
-            <element signature="e#6205#6229#0" expanded="false" />
+            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#270#357#0" expanded="false" />
+            <element signature="e#402#429#0" expanded="false" />
+            <element signature="e#488#755#0" expanded="false" />
+            <element signature="e#801#1231#0" expanded="false" />
+            <element signature="e#6886#8252#0" expanded="false" />
+            <element signature="e#8044#8202#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parserInfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1032">
+          <caret line="70" column="66" lean-forward="false" selection-start-line="70" selection-start-column="66" selection-end-line="70" selection-end-column="66" />
+          <folding>
+            <element signature="e#2599#2760#0" expanded="false" />
+            <element signature="e#3418#4318#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="55" column="29" lean-forward="false" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geturl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#270#357#0" expanded="false" />
+            <element signature="e#402#429#0" expanded="false" />
+            <element signature="e#488#755#0" expanded="false" />
+            <element signature="e#801#1231#0" expanded="false" />
+            <element signature="e#6886#8252#0" expanded="false" />
+            <element signature="e#8044#8202#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geturl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#270#357#0" expanded="false" />
+            <element signature="e#402#429#0" expanded="false" />
+            <element signature="e#488#755#0" expanded="false" />
+            <element signature="e#801#1231#0" expanded="false" />
+            <element signature="e#6886#8252#0" expanded="false" />
+            <element signature="e#8044#8202#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -443,9 +905,8 @@
         <state relative-caret-position="1680">
           <caret line="70" column="66" lean-forward="false" selection-start-line="70" selection-start-column="66" selection-end-line="70" selection-end-column="66" />
           <folding>
-            <element signature="e#1271#2434#0" expanded="false" />
-            <element signature="e#2494#2655#0" expanded="false" />
-            <element signature="e#3313#4213#0" expanded="false" />
+            <element signature="e#2599#2760#0" expanded="false" />
+            <element signature="e#3418#4318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -465,11 +926,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#244#331#0" expanded="false" />
-            <element signature="e#376#403#0" expanded="false" />
-            <element signature="e#1271#4619#0" expanded="false" />
-            <element signature="e#4668#8777#0" expanded="false" />
-            <element signature="e#6205#6229#0" expanded="false" />
+            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#270#357#0" expanded="false" />
+            <element signature="e#402#429#0" expanded="false" />
+            <element signature="e#488#755#0" expanded="false" />
+            <element signature="e#801#1231#0" expanded="false" />
+            <element signature="e#6886#8252#0" expanded="false" />
+            <element signature="e#8044#8202#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -479,9 +942,8 @@
         <state relative-caret-position="1032">
           <caret line="70" column="66" lean-forward="false" selection-start-line="70" selection-start-column="66" selection-end-line="70" selection-end-column="66" />
           <folding>
-            <element signature="e#1271#2434#0" expanded="false" />
-            <element signature="e#2494#2655#0" expanded="false" />
-            <element signature="e#3313#4213#0" expanded="false" />
+            <element signature="e#2599#2760#0" expanded="false" />
+            <element signature="e#3418#4318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -501,11 +963,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#244#331#0" expanded="false" />
-            <element signature="e#376#403#0" expanded="false" />
-            <element signature="e#1271#4619#0" expanded="false" />
-            <element signature="e#4668#8777#0" expanded="false" />
-            <element signature="e#6205#6229#0" expanded="false" />
+            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#270#357#0" expanded="false" />
+            <element signature="e#402#429#0" expanded="false" />
+            <element signature="e#488#755#0" expanded="false" />
+            <element signature="e#801#1231#0" expanded="false" />
+            <element signature="e#6886#8252#0" expanded="false" />
+            <element signature="e#8044#8202#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -515,9 +979,8 @@
         <state relative-caret-position="1032">
           <caret line="70" column="66" lean-forward="false" selection-start-line="70" selection-start-column="66" selection-end-line="70" selection-end-column="66" />
           <folding>
-            <element signature="e#1271#2434#0" expanded="false" />
-            <element signature="e#2494#2655#0" expanded="false" />
-            <element signature="e#3313#4213#0" expanded="false" />
+            <element signature="e#2599#2760#0" expanded="false" />
+            <element signature="e#3418#4318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -537,11 +1000,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#244#331#0" expanded="false" />
-            <element signature="e#376#403#0" expanded="false" />
-            <element signature="e#1271#4619#0" expanded="false" />
-            <element signature="e#4668#8777#0" expanded="false" />
-            <element signature="e#6205#6229#0" expanded="false" />
+            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#270#357#0" expanded="false" />
+            <element signature="e#402#429#0" expanded="false" />
+            <element signature="e#488#755#0" expanded="false" />
+            <element signature="e#801#1231#0" expanded="false" />
+            <element signature="e#6886#8252#0" expanded="false" />
+            <element signature="e#8044#8202#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -551,9 +1016,8 @@
         <state relative-caret-position="1032">
           <caret line="70" column="66" lean-forward="false" selection-start-line="70" selection-start-column="66" selection-end-line="70" selection-end-column="66" />
           <folding>
-            <element signature="e#1271#2434#0" expanded="false" />
-            <element signature="e#2494#2655#0" expanded="false" />
-            <element signature="e#3313#4213#0" expanded="false" />
+            <element signature="e#2599#2760#0" expanded="false" />
+            <element signature="e#3418#4318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -573,11 +1037,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#244#331#0" expanded="false" />
-            <element signature="e#376#403#0" expanded="false" />
-            <element signature="e#1271#4619#0" expanded="false" />
-            <element signature="e#4668#8777#0" expanded="false" />
-            <element signature="e#6205#6229#0" expanded="false" />
+            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#270#357#0" expanded="false" />
+            <element signature="e#402#429#0" expanded="false" />
+            <element signature="e#488#755#0" expanded="false" />
+            <element signature="e#801#1231#0" expanded="false" />
+            <element signature="e#6886#8252#0" expanded="false" />
+            <element signature="e#8044#8202#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -587,9 +1053,8 @@
         <state relative-caret-position="264">
           <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
           <folding>
-            <element signature="e#1271#2434#0" expanded="false" />
-            <element signature="e#2494#2655#0" expanded="false" />
-            <element signature="e#3313#4213#0" expanded="false" />
+            <element signature="e#2599#2760#0" expanded="false" />
+            <element signature="e#3418#4318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -609,11 +1074,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#244#331#0" expanded="false" />
-            <element signature="e#376#403#0" expanded="false" />
-            <element signature="e#1271#4619#0" expanded="false" />
-            <element signature="e#4668#8777#0" expanded="false" />
-            <element signature="e#6205#6229#0" expanded="false" />
+            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#270#357#0" expanded="false" />
+            <element signature="e#402#429#0" expanded="false" />
+            <element signature="e#488#755#0" expanded="false" />
+            <element signature="e#801#1231#0" expanded="false" />
+            <element signature="e#6886#8252#0" expanded="false" />
+            <element signature="e#8044#8202#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -623,9 +1090,8 @@
         <state relative-caret-position="264">
           <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
           <folding>
-            <element signature="e#1271#2434#0" expanded="false" />
-            <element signature="e#2494#2655#0" expanded="false" />
-            <element signature="e#3313#4213#0" expanded="false" />
+            <element signature="e#2599#2760#0" expanded="false" />
+            <element signature="e#3418#4318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -645,11 +1111,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#244#331#0" expanded="false" />
-            <element signature="e#376#403#0" expanded="false" />
-            <element signature="e#1271#4619#0" expanded="false" />
-            <element signature="e#4668#8777#0" expanded="false" />
-            <element signature="e#6205#6229#0" expanded="false" />
+            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#270#357#0" expanded="false" />
+            <element signature="e#402#429#0" expanded="false" />
+            <element signature="e#488#755#0" expanded="false" />
+            <element signature="e#801#1231#0" expanded="false" />
+            <element signature="e#6886#8252#0" expanded="false" />
+            <element signature="e#8044#8202#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -659,9 +1127,8 @@
         <state relative-caret-position="624">
           <caret line="101" column="69" lean-forward="false" selection-start-line="101" selection-start-column="69" selection-end-line="101" selection-end-column="69" />
           <folding>
-            <element signature="e#1271#2434#0" expanded="false" />
-            <element signature="e#2494#2655#0" expanded="false" />
-            <element signature="e#3313#4213#0" expanded="false" />
+            <element signature="e#2599#2760#0" expanded="false" />
+            <element signature="e#3418#4318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -681,11 +1148,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#244#331#0" expanded="false" />
-            <element signature="e#376#403#0" expanded="false" />
-            <element signature="e#1271#4619#0" expanded="false" />
-            <element signature="e#4668#8777#0" expanded="false" />
-            <element signature="e#6205#6229#0" expanded="false" />
+            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#270#357#0" expanded="false" />
+            <element signature="e#402#429#0" expanded="false" />
+            <element signature="e#488#755#0" expanded="false" />
+            <element signature="e#801#1231#0" expanded="false" />
+            <element signature="e#6886#8252#0" expanded="false" />
+            <element signature="e#8044#8202#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -695,9 +1164,8 @@
         <state relative-caret-position="624">
           <caret line="101" column="69" lean-forward="false" selection-start-line="101" selection-start-column="69" selection-end-line="101" selection-end-column="69" />
           <folding>
-            <element signature="e#1271#2434#0" expanded="false" />
-            <element signature="e#2494#2655#0" expanded="false" />
-            <element signature="e#3313#4213#0" expanded="false" />
+            <element signature="e#2599#2760#0" expanded="false" />
+            <element signature="e#3418#4318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -717,11 +1185,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#244#331#0" expanded="false" />
-            <element signature="e#376#403#0" expanded="false" />
-            <element signature="e#1271#4619#0" expanded="false" />
-            <element signature="e#4668#8777#0" expanded="false" />
-            <element signature="e#6205#6229#0" expanded="false" />
+            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#270#357#0" expanded="false" />
+            <element signature="e#402#429#0" expanded="false" />
+            <element signature="e#488#755#0" expanded="false" />
+            <element signature="e#801#1231#0" expanded="false" />
+            <element signature="e#6886#8252#0" expanded="false" />
+            <element signature="e#8044#8202#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -731,9 +1201,8 @@
         <state relative-caret-position="624">
           <caret line="101" column="69" lean-forward="false" selection-start-line="101" selection-start-column="69" selection-end-line="101" selection-end-column="69" />
           <folding>
-            <element signature="e#1271#2434#0" expanded="false" />
-            <element signature="e#2494#2655#0" expanded="false" />
-            <element signature="e#3313#4213#0" expanded="false" />
+            <element signature="e#2599#2760#0" expanded="false" />
+            <element signature="e#3418#4318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -753,11 +1222,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#244#331#0" expanded="false" />
-            <element signature="e#376#403#0" expanded="false" />
-            <element signature="e#1271#4619#0" expanded="false" />
-            <element signature="e#4668#8777#0" expanded="false" />
-            <element signature="e#6205#6229#0" expanded="false" />
+            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#270#357#0" expanded="false" />
+            <element signature="e#402#429#0" expanded="false" />
+            <element signature="e#488#755#0" expanded="false" />
+            <element signature="e#801#1231#0" expanded="false" />
+            <element signature="e#6886#8252#0" expanded="false" />
+            <element signature="e#8044#8202#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -767,9 +1238,8 @@
         <state relative-caret-position="624">
           <caret line="101" column="69" lean-forward="false" selection-start-line="101" selection-start-column="69" selection-end-line="101" selection-end-column="69" />
           <folding>
-            <element signature="e#1271#2434#0" expanded="false" />
-            <element signature="e#2494#2655#0" expanded="false" />
-            <element signature="e#3313#4213#0" expanded="false" />
+            <element signature="e#2599#2760#0" expanded="false" />
+            <element signature="e#3418#4318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -789,11 +1259,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#244#331#0" expanded="false" />
-            <element signature="e#376#403#0" expanded="false" />
-            <element signature="e#1271#4619#0" expanded="false" />
-            <element signature="e#4668#8777#0" expanded="false" />
-            <element signature="e#6205#6229#0" expanded="false" />
+            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#270#357#0" expanded="false" />
+            <element signature="e#402#429#0" expanded="false" />
+            <element signature="e#488#755#0" expanded="false" />
+            <element signature="e#801#1231#0" expanded="false" />
+            <element signature="e#6886#8252#0" expanded="false" />
+            <element signature="e#8044#8202#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -813,51 +1285,107 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../3.2.1/geturl.py" />
-    <entry file="file://$PROJECT_DIR$/../working/杂/爬虫工作交接/数据清洗_Windows/pro.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="196" column="36" lean-forward="true" selection-start-line="196" selection-start-column="36" selection-end-line="196" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/multiprocessing/pool.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="547">
           <caret line="315" column="8" lean-forward="false" selection-start-line="315" selection-start-column="8" selection-end-line="315" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../working/杂/爬虫工作交接/数据清洗_Windows/pro.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="193" column="5" lean-forward="true" selection-start-line="193" selection-start-column="5" selection-end-line="193" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../working/杂/english/english。/functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-576">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../working/杂/english/english。/parserInfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="100" column="8" lean-forward="false" selection-start-line="100" selection-start-column="8" selection-end-line="100" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parserInfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1944">
+          <caret line="104" column="27" lean-forward="false" selection-start-line="104" selection-start-column="27" selection-end-line="104" selection-end-column="27" />
+          <folding>
+            <element signature="e#2599#2760#0" expanded="false" />
+            <element signature="e#3418#4318#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/urllib/request.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="1237" column="31" lean-forward="false" selection-start-line="1237" selection-start-column="31" selection-end-line="1237" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/geturl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+        <state relative-caret-position="4008">
+          <caret line="226" column="19" lean-forward="false" selection-start-line="226" selection-start-column="19" selection-end-line="226" selection-end-column="19" />
           <folding>
-            <element signature="e#244#331#0" expanded="false" />
-            <element signature="e#376#403#0" expanded="false" />
-            <element signature="e#1271#4619#0" expanded="false" />
-            <element signature="e#4668#8777#0" expanded="false" />
-            <element signature="e#6205#6229#0" expanded="false" />
+            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#270#357#0" expanded="false" />
+            <element signature="e#402#429#0" expanded="false" />
+            <element signature="e#488#755#0" expanded="false" />
+            <element signature="e#801#1231#0" expanded="false" />
+            <element signature="e#6886#8252#0" expanded="false" />
+            <element signature="e#8044#8202#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parserInfo.py">
+    <entry file="file://$USER_HOME$/Documents/GitHub/fuck-login/001 zhihu/zhihu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1032">
-          <caret line="70" column="66" lean-forward="false" selection-start-line="70" selection-start-column="66" selection-end-line="70" selection-end-column="66" />
+        <state relative-caret-position="360">
+          <caret line="15" column="15" lean-forward="false" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/twisted/words/test/test_ircsupport.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/json/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="301" column="4" lean-forward="false" selection-start-line="301" selection-start-column="4" selection-end-line="301" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/post.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="76" column="19" lean-forward="false" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
           <folding>
-            <element signature="e#1271#2434#0" expanded="false" />
-            <element signature="e#2494#2655#0" expanded="false" />
-            <element signature="e#3313#4213#0" expanded="false" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="55" column="29" lean-forward="false" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
+        <state relative-caret-position="336">
+          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

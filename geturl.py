@@ -7,7 +7,9 @@ import parserInfo
 from urllib.parse import urljoin
 import time
 import multiprocessing
+import chardet
 flag = 1
+re_st = ''
 
 
 class Spider:
@@ -49,6 +51,8 @@ class Spider:
         self.i += 1
         self.info.append(str(self.i))
         self.info.append(url)
+        # print(self.f.soup.find('div',class_='font').h3.get_text())
+        # self.info.append(self.f.soup.find('div',class_='font').h3.get_text())
         self.info.append(name)
         # ---------------------------EMAIL---------------------------------------------------------
         if self.parser_info.parser_email(re_infos):
@@ -58,7 +62,7 @@ class Spider:
             print('get no email! the url is:',url)
             return
         # ------------------------------------------------------------------------------------
-        self.info.append("上海师范大学")
+        self.info.append("上海海事大学")
         self.info.append(self.name)
         self.info.append("上海")
         # -----------------------------YEAR-------------------------------------------------------
@@ -125,24 +129,29 @@ class Spider:
             req.add_header('User-Agent',
                            'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0')
             try:
-                texts = urllib.request.urlopen(req).read()
-            except TimeoutError:
-                print('try again')
-                texts = urllib.request.urlopen(req, timeout=8).read()
-            soup = BeautifulSoup(texts, "html.parser")
+                # req1 = urllib.request.urlopen(req)
+                req1 = urllib.request.build_opener(urllib.request.HTTPCookieProcessor).open(url)
+            except Exception as e:
+                print(e)
+                req1 = urllib.request.urlopen(req, timeout=10)
+            char = chardet.detect(urllib.request.urlopen(url).read())  # 自动识别编码
+            if char['encoding'] == 'GB2312':
+                char['encoding'] = 'gbk'
+            soup = BeautifulSoup(req1, "html.parser", from_encoding=char['encoding'])
             texts = soup.select("a[href]")
             for text in texts:
                 url0 = text['href']
                 name = text.get_text(strip=True)
                 name = name.replace('\xa0', '')
                 # print(url0,name)
+                global re_st
                 if name.split():
-                    if name:
-                        if re.search('http://xxjd.shnu.edu.cn/Default.aspx?',url0):
+                    if name and '查看详情' not in name:
+                        if re.findall(re_st,url0):
                             temp = urljoin(url, url0.strip()) + "|" + name
                             datas0.append(temp)
                             print(temp.split("|"))
-        # datas = list(set(datas))   #  过滤重复
+        # datas = list(set(datas0))   #  过滤重复
         # datas.sort()
         results = []
         for data in datas0:
@@ -162,66 +171,9 @@ class Spider:
         # pool.join()
 
 
-    # def main2(self):    # ****************************信息在一个url情况   此时改if_name__ 中的main函数
-    #     urls = ['http://cise.ecust.edu.cn/2011/0615/c7766a55144/page.htm',
-    #             'http://cise.ecust.edu.cn/2011/0615/c7766a55149/page.htm',
-    #             'http://cise.ecust.edu.cn/2011/0615/c7766a55148/page.htm',
-    #             'http://cise.ecust.edu.cn/2011/0615/c7766a55147/page.htm',
-    #             'http://cise.ecust.edu.cn/2011/0615/c7766a55146/page.htm',
-    #             'http://cise.ecust.edu.cn/2011/0615/c7766a55145/page.htm']
-    #     for url in urls:
-    #         re_infos = self.f.get_crit_info(url, self.tag, **self.kwargs).split('办公地址')
-    #         for re_info in re_infos:
-    #             t_list = [x for x in re_info.split('~') if x]
-    #             try:
-    #                 if re.search('@', t_list[-1]):
-    #                     print(t_list)
-    #                     Spider._settle2(self, url, t_list)
-    #             except:
-    #                 self.info.clear()
-    #                 continue
-    #
-    # def _settle2(self,url,t_list):
-    #     self.info.append(str(self.i))
-    #     self.info.append(url)
-    #     gender = ''
-    #     prof = ''
-    #     dir0 = ''
-    #     phone = ''
-    #     for n,mess in enumerate(t_list):
-    #         if re.search('[男女]',mess):
-    #             gender = re.search('[男女]',mess).group()
-    #             prof = t_list[n].split('，')[1]
-    #             if len(t_list[n-1]) == 1:
-    #                 self.info.append(t_list[n - 2] + t_list[n - 1])
-    #             else:
-    #                 self.info.append(t_list[n-1])
-    #         if re.search('研究兴趣|研究领域|主讲课程',mess):
-    #             dir0 = t_list[n + 1]
-    #         if re.search('联系电话', mess):
-    #             phone = t_list[n + 1]
-    #     self.info.append(t_list[-1])
-    #     self.info.append("华东理工大学")
-    #     self.info.append(self.name)
-    #     self.info.append("上海")
-    #     self.info.append('')
-    #     self.info.append(gender)
-    #     self.info.append('博士')
-    #     self.info.append(prof)
-    #     self.info.append('')
-    #     self.info.append(dir0)
-    #     self.info.append(phone)
-    #     self.info.append("310000")
-    #     self.info.append("310100")
-    #     self.info.append("")
-    #     print(self.info)
-    #     spider.write()
-    #     if self.info:
-    #         self.info = []
-
 class Write(object):
     def __init__(self, name,lis):
-        self.workbook = xlsxwriter.Workbook(r'C:\Users\happytreefriend\Desktop\working\excel\SHNU'+name+'.xlsx')
+        self.workbook = xlsxwriter.Workbook(r'C:\Users\happytreefriend\Desktop\working\excel\\'+name+'.xlsx')
         self.worksheet = self.workbook.add_worksheet(name)
         self.worksheet.set_column('B:B', 40)
         self.worksheet.set_column('D:D', 30)
@@ -257,14 +209,17 @@ class Write(object):
 
 if __name__ == "__main__":
     start = time.time()
+    re_st = '/xbh/teachers/team/'
     r_urls = [
-        # 'http://jiangong.shnu.edu.cn/Default.aspx?tabid=931#top',
-        # 'http://xxjd.shnu.edu.cn/Default.aspx?tabid=13534',
-        # 'http://xxjd.shnu.edu.cn/Default.aspx?tabid=13535',
-        # 'http://shenghuan.shnu.edu.cn/Default.aspx?tabid=10619&language=zh-CN'
+        # 'http://cfl.shmtu.edu.cn/teacher2.aspx?id=',
+        'http://www.xbharts.com/xbh/teachers/team/',
+        # 'http://law.shmtu.edu.cn/index.aspx?lanmuid=95&sublanmuid=737',
+        # 'http://law.shmtu.edu.cn/index.aspx?lanmuid=95&sublanmuid=738'
     ]
-    root_name = "建筑工程学院"
-    spider = Spider(root_name, 0, 'div', class_="content")    # 0 获取部分内容 1 获取全部
+    # for i in range(132,139):
+    #     r_urls.append('http://cfl.shmtu.edu.cn/teacher2.aspx?id=%s' %i)
+    root_name = "徐悲鸿艺术学院"
+    spider = Spider(root_name, 0, 'div', class_="nb-r-con")    # 0 获取部分内容 1 获取全部
     mgr = multiprocessing.Manager()
     l = mgr.list()
     spider.main(r_urls)
