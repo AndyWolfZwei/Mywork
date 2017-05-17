@@ -1,5 +1,5 @@
+import sys
 from bs4 import BeautifulSoup
-import urllib.request
 import re
 import xlsxwriter
 import functions
@@ -8,9 +8,11 @@ from urllib.parse import urljoin
 import time
 import multiprocessing
 import chardet
+import requests
+from xpinyin import Pinyin,get_init_name
+email_tail = '@sues.edu.cn'
 flag = 1
 re_st = ''
-
 
 class Spider:
     def __getstate__(self):
@@ -40,13 +42,15 @@ class Spider:
         global flag
         try:
             re_info = self.f.get_crit_info(urls, self.id, self.tag, **self.kwargs)
-            Spider._settle(self, names, urls, re_info, flag, ll)
+            Spider.settle(self, names, urls, re_info, flag, ll)
         except Exception as e:
-            print("_get_info  error!", e, 'The url is:', urls)
+            s = sys.exc_info()
+            print("Error '%s' happened on line %d,the error is %s" % (s[1], s[2].tb_lineno,e),'the url is:',urls)
+            # print("_get_info  error!", e, 'The url is:', urls)
             self.info.clear()
             return
 
-    def _settle(self, name, url, re_infos, flag0, l_t):
+    def settle(self, name, url, re_infos, flag0, l_t):
         l_split = re_infos.split('~')
         self.i += 1
         self.info.append(str(self.i))
@@ -55,14 +59,17 @@ class Spider:
         # self.info.append(self.f.soup.find('div',class_='font').h3.get_text())
         self.info.append(name)
         # ---------------------------EMAIL---------------------------------------------------------
+
         if self.parser_info.parser_email(re_infos):
             self.info.append(self.parser_info.parser_email(re_infos))
         else:
-            self.info.clear()
+            global email_tail
             print('get no email! the url is:',url)
-            return
+            p = Pinyin()
+            q = get_init_name()
+            self.info.append(q.main(name[1:]) + p.get_pinyin(name[0])+email_tail)
         # ------------------------------------------------------------------------------------
-        self.info.append("上海海事大学")
+        self.info.append("上海工程技术大学")
         self.info.append(self.name)
         self.info.append("上海")
         # -----------------------------YEAR-------------------------------------------------------
@@ -83,7 +90,7 @@ class Spider:
         else:
             self.info.append('博士')
         # ----------------------------职称---------------------------------------------------
-        self.info.append(self.parser_info.parser_qual(re_infos, l_split))
+        self.info.append(self.parser_info.parser_qual(re_infos, l_split,name))
         # ----------------------------导师资格----------------------------------------------------
         if re.findall("博士生导师|博导", re_infos):  # 匹配导师资格
             self.info.append("博士生导师")
@@ -97,10 +104,10 @@ class Spider:
                 self.info.append(self.parser_info.parser_dir(l_split))
             else:
                 self.info.append(re.sub('1','',self.parser_info.parser_dir(l_split)))
-        if flag0 == 2:       #
+        if flag0 == 2:       # 同3
             self.info.append(self.parser_info.parser_other_dir(self.f.soup))
         if flag0 == 3:       # 找模板
-            self.info.append(re.sub(r'研究方向|[\n：]','',self.f.soup.find('p',class_='arti_metas').get_text()))
+            self.info.append(re.sub(r'研究方向|[\n：]','',self.f.soup.find('p',style=re.compile('BACKGROUND: white;')).get_text()))
         # ---------------------------------PHONE------------------------------------------------
         phone = re.findall("\D(0?2?1?[56]\d{3}-?\d{4}(?=\D)-?\d{0,3})", re_infos)  # phone
         if phone:
@@ -123,34 +130,42 @@ class Spider:
     def main(*urls):
         datas0 = []
         print(urls)
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0',}
         for url in urls[0]:
             print(url)
-            req = urllib.request.Request(url)
-            req.add_header('User-Agent',
-                           'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0')
             try:
-                # req1 = urllib.request.urlopen(req)
-                req1 = urllib.request.build_opener(urllib.request.HTTPCookieProcessor).open(url)
+                req1 = requests.get(url, headers=headers,timeout=10)
             except Exception as e:
                 print(e)
-                req1 = urllib.request.urlopen(req, timeout=10)
-            char = chardet.detect(urllib.request.urlopen(url).read())  # 自动识别编码
+                req1 = requests.get(url, headers=headers, timeout=10)
+            char = chardet.detect(req1.content)  # 自动识别编码
             if char['encoding'] == 'GB2312':
                 char['encoding'] = 'gbk'
-            soup = BeautifulSoup(req1, "html.parser", from_encoding=char['encoding'])
+            soup = BeautifulSoup(req1.content, "html.parser", from_encoding=char['encoding'])
             texts = soup.select("a[href]")
             for text in texts:
                 url0 = text['href']
                 name = text.get_text(strip=True)
                 name = name.replace('\xa0', '')
                 # print(url0,name)
+                name = name.replace('教授','')
+                name = name.replace('研究员', '')
+                name = name.split('（')[0]
                 global re_st
                 if name.split():
-                    if name and '查看详情' not in name:
+                    if name:
                         if re.findall(re_st,url0):
-                            temp = urljoin(url, url0.strip()) + "|" + name
-                            datas0.append(temp)
-                            print(temp.split("|"))
+                            try:
+                                # r0 = requests.get(urljoin(url, url0.strip()), allow_redirects=False)  # 重定向error
+                                # url = r0.headers['Location']
+                                # print(r0.headers.items())
+                                # temp = url + "|" + name
+                                temp = urljoin(url, url0.strip()) + "|" + name
+                                datas0.append(temp)
+                                print(temp.split("|"))
+                            except KeyError:
+                                print('main.get name url error')
+                                continue
         # datas = list(set(datas0))   #  过滤重复
         # datas.sort()
         results = []
@@ -162,13 +177,6 @@ class Spider:
         for i in range(0,len(results)):
             if results[i].get() is not None:
                 print(results[i].get())
-        # except Exception as e:
-        #     print('@@@',e)
-        # for res in result:
-        #     print(res.get())
-        # print(self.info)
-        # pool.close()
-        # pool.join()
 
 
 class Write(object):
@@ -209,20 +217,24 @@ class Write(object):
 
 if __name__ == "__main__":
     start = time.time()
-    re_st = '/xbh/teachers/team/'
+    re_st = 'page.htm|teacher_info.asp?|/pubinfo/detail.asp'
     r_urls = [
-        # 'http://cfl.shmtu.edu.cn/teacher2.aspx?id=',
-        'http://www.xbharts.com/xbh/teachers/team/',
-        # 'http://law.shmtu.edu.cn/index.aspx?lanmuid=95&sublanmuid=737',
-        # 'http://law.shmtu.edu.cn/index.aspx?lanmuid=95&sublanmuid=738'
+        'http://curt.sues.edu.cn/11516/list.htm',
+        'http://curt.sues.edu.cn/11515/list.htm',
+        'http://curt.sues.edu.cn/11513/list.htm',
+        'http://curt.sues.edu.cn/11514/list.htm'
     ]
-    # for i in range(132,139):
-    #     r_urls.append('http://cfl.shmtu.edu.cn/teacher2.aspx?id=%s' %i)
-    root_name = "徐悲鸿艺术学院"
-    spider = Spider(root_name, 0, 'div', class_="nb-r-con")    # 0 获取部分内容 1 获取全部
+    r_urls1 = []
+    for i in range(11000,11023):
+        # for j in range(1,2):
+        #     r = requests.get(i, allow_redirects=False)  # 302error
+            # r_urls1.append(r.headers['Location'])
+            r_urls1.append('http://seee.sues.edu.cn/%s/list.htm' %i)
+    root_name = "电子电气工程学院"
+    spider = Spider(root_name, 0, 'div', id="container_content")    # 0 获取部分内容 1 获取全部
     mgr = multiprocessing.Manager()
     l = mgr.list()
-    spider.main(r_urls)
+    spider.main(r_urls1)
     write = Write(root_name, str(l))
     write.writing()
     write.end()

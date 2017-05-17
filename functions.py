@@ -1,9 +1,8 @@
 import re
 from bs4 import BeautifulSoup
-import urllib.request
-import parserInfo
 import chardet
-
+import parserInfo
+import requests
 
 class GetChineseInfo:
     def __init__(self):
@@ -11,17 +10,16 @@ class GetChineseInfo:
         self.p = parserInfo.Parser()
 
     def _get_soup(self, urll):  # 返回soup对象
-        req0 = urllib.request.Request(urll)
-        req0.add_header('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0')
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0', }
         try:
-            req = urllib.request.urlopen(req0)
+            req = requests.get(urll, headers=headers, timeout=10)
         except Exception as e:
             print(e)
-            req = urllib.request.urlopen(req0, timeout=10)
-        char = chardet.detect(urllib.request.urlopen(req0).read())    # 自动识别编码
+            req = requests.get(urll, headers=headers, timeout=10)
+        char = chardet.detect(req.content)    # 自动识别编码
         if char['encoding'] == 'GB2312':
             char['encoding'] = 'gbk'
-        soup = BeautifulSoup(req, "html.parser", from_encoding=char['encoding'])
+        soup = BeautifulSoup(req.content, "html.parser", from_encoding=char['encoding'])
         [script.extract() for script in soup.findAll('script')]
         [style.extract() for style in soup.findAll('style')]
         self.soup = soup
@@ -47,14 +45,16 @@ class GetChineseInfo:
 
 if __name__ == "__main__":
     info = []
+    parser_info = parserInfo.Parser()
     url0 = 'http://cceb.dhu.edu.cn/article.do?method=showmax&id=60&pid=30&start=32&tx=0.8361615977042185'
-    url = 'http://cfl.shmtu.edu.cn/teacher_show.aspx?id=276'
+    url = 'http://hhxy.shiep.edu.cn/a9/6f/c1268a43375/page.htm'
     temp = GetChineseInfo()
-    re_infos = temp.get_crit_info(url, 0, 'div', class_="ny_right")
+    re_infos = temp.get_crit_info(url, 0, 'div', class_="content")
     l = re_infos.split('~')  # 分割
-    # print(re_infos)re_infos
-    te = temp.p.parser_dir(l)
-    print(re_infos)
+    print(l)
+    te = temp.p.parser_qual(re_infos,l,'张萍')
+    print(te)
+
 
     # if len(list_info[n + count]) > 40:
     #     return re.sub(pattern, ' ', list_info[n + count].split()[0])
