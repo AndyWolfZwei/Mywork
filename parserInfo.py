@@ -15,11 +15,11 @@ class Parser:
         dirs = re.findall('研究(?:方向|领域|兴趣)[为是]?[：:]?(.*?)[。.、]|研究(?:方向|领域|兴趣)[为是]?[：:]?(.*?)$|(?:主要|长期)?从事(.*?)的?研究', words)
         full_dir = []
         [full_dir.append(i) for i in dirs[0] if i]
-        print(full_dir)
+        # print(full_dir)
         if len(full_dir[0]) > 3:
             u = re.split("[、， ；,;.。:：]", full_dir[0])  # 将第一句话分割 如果可以分割成多份 就判断字长度
             print('method1 话已分割')
-            print(u)
+            # print(u)
             for i in range(0, len(u)):
                 print(u[i], u[i].isalnum())
                 if len(u[i]) > 4 and re.search(r'[\u4e00-\u9fa5]+', u[i]):
@@ -37,8 +37,8 @@ class Parser:
         print('在下一句找方向中')
         try:
             temp = ','.join(list_info[n + count].split())
-            print(list_info[n + count])
-            while len(list_info[n + count]) < 6 or not re.search(r'[\u4e00-\u9fa5]+',list_info[n + count]):
+            # print(list_info[n + count])
+            while len(list_info[n + count]) < 4 or not re.search(r'[\u4e00-\u9fa5]+',list_info[n + count]):
                 print('在2进行第%s次循环' % count)
                 list_info[n + count + 1] = re.sub(self.pattern, ' ', list_info[n + count + 1]).strip()
                 temp = re.split(' ',list_info[n + count + 1])[0]
@@ -46,12 +46,16 @@ class Parser:
                 print(temp)
             if re.search('研究方向|主要研究', list_info[n + count]) and len(temp) > 40:
                 return Parser.method1(self, list_info[n + count])
-            if len(re.split('[,、，]',list_info[n + count])) > 1:
-                if len(re.split('[,、，]',list_info[n + count])[0]) < 3:
+            temp1 = re.split('[,、，]',list_info[n + count])
+            # print(temp1)
+            if len(temp1) > 1:
+                if len(temp1[0]) < 4:
                     return re.split(' ', re.sub(self.pattern, ' ', list_info[n + count]).strip())[1]
                 else:
-                    print(re.split(' ', re.sub(self.pattern, ' ', list_info[n + count]).strip()))
-                    return re.split(' ', re.sub(self.pattern, ' ', list_info[n + count]).strip())[0]
+                    u = re.split(' ', re.sub(self.pattern, ' ', list_info[n + count]).strip())
+                    if '方向' in u[0] and len(u[0])<5:
+                        return u[1]
+                    return u[0]
             return re.sub(self.pattern, '', temp)
         except Exception as e:
             print("研究方向方法二失败", e)
@@ -67,7 +71,7 @@ class Parser:
 
     def _search_dir(self, list_info):
         for n, words in enumerate(list_info):
-            if re.findall("研究方向|研究领域|研究兴趣|研究专长|专业方向|(主要|长期)?从事", words):  # *****在list中再找关键字 ******   (match search findall)
+            if re.findall("研究方向|研究领域|研究兴趣|研究专长|专业方向|(主要|长期)?从事|主讲课程", words):  # *****在list中再找关键字 ******   (match search findall)
                 print('找到研究方向')
                 words = re.sub('[主要的]', '', words)
                 if len(words) > 9 and not re.search('研究专长|及课题|从事专业',words):  # 如果研究方向所在长度小于6   执行在这句话里面找研究方向
@@ -114,7 +118,7 @@ class Parser:
     @staticmethod
     def parser_email(re_infos):
         email = re.findall("[\w-]+(?:\.[\w!#$%&'*+/=?^_`{|}-]+)*@(?:[\w](?:[\w-]*[\w])?\.)"
-                           "+[\w](?:[\w-]*[\w])?", re_infos)  # email
+                           "+[\w](?:[\w-]*[\w])?", re_infos,re.A)  # email
         if email:
             return email[0]
         else:

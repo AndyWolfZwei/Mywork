@@ -47,12 +47,12 @@ if __name__ == "__main__":
     info = []
     parser_info = parserInfo.Parser()
     url0 = 'http://cceb.dhu.edu.cn/article.do?method=showmax&id=60&pid=30&start=32&tx=0.8361615977042185'
-    url = 'http://hhxy.shiep.edu.cn/a9/6f/c1268a43375/page.htm'
+    url = 'http://sc.zjou.edu.cn/info/1257/2707.htm'
     temp = GetChineseInfo()
-    re_infos = temp.get_crit_info(url, 0, 'div', class_="content")
+    re_infos = temp.get_crit_info(url, 0, 'div', id="vsb_content")
     l = re_infos.split('~')  # 分割
     print(l)
-    te = temp.p.parser_qual(re_infos,l,'张萍')
+    te = temp.p.parser_dir(l)
     print(te)
 
 
